@@ -47,11 +47,16 @@ class FundingManager {
                         <img src="img/qr_${cryptoKey}_address.jpg" alt="QR код для ${crypto.name}" class="qr-code-thumb">
                     </a>
                     <div class="funding-content">
-                        <strong>${crypto.name}</strong>
+                        <div class="title-row">
+                            <strong>${crypto.name}</strong>
+                            <button class="copy-btn" data-address="${crypto.address}" title="Копировать адрес">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                    <path d="m4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                                </svg>
+                            </button>
+                        </div>
                         <code class="address-text" data-address="${crypto.address}">${crypto.address}</code>
-                        <button class="copy-btn" data-address="${crypto.address}" title="Копировать адрес">
-                            ⧉
-                        </button>
                     </div>
                 </div>
             `;
@@ -92,14 +97,18 @@ class FundingManager {
     }
 
     showCopySuccess(button) {
-        const originalText = button.textContent;
-        button.textContent = '✓';
+        const originalHTML = button.innerHTML;
+        const originalColor = button.style.color;
+
+        // Заменяем иконку на галочку
+        button.innerHTML = '<span style="font-size: 20px; font-weight: bold;">✓</span>';
         button.style.color = 'var(--success-color)';
         button.title = 'Скопировано!';
 
+        // Через 2 секунды восстанавливаем оригинальную иконку
         setTimeout(() => {
-            button.textContent = originalText;
-            button.style.color = '';
+            button.innerHTML = originalHTML;
+            button.style.color = originalColor;
             button.title = 'Копировать адрес';
         }, 2000);
     }
