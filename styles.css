@@ -6,20 +6,20 @@
 }
 
 :root {
-    --primary-bg: #000000;
-    --secondary-bg: #0f0f0f;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --border-color: rgba(255, 255, 255, 0.08);
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #1a1a1a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.12);
     --text-primary: #ffffff;
-    --text-secondary: #999999;
+    --text-secondary: #cccccc;
     --accent-color: #ffffff;
-    --accent-secondary: #333333;
-    --success-color: #cccccc;
-    --gradient-1: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    --gradient-2: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    --gradient-3: linear-gradient(135deg, #000000 0%, #111111 100%);
-    --mid-gray: #666666;
-    --light-white: #f5f5f5;
+    --accent-secondary: #555555;
+    --success-color: #ffffff;
+    --gradient-1: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    --gradient-2: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+    --gradient-3: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+    --mid-gray: #888888;
+    --light-white: #ffffff;
 }
 
 body {
@@ -47,7 +47,7 @@ body::before {
 }
 
 body {
-    padding-top: 80px; /* Space for fixed header buttons */
+    padding-top: 60px; /* Space for fixed header buttons */
 }
 
 .container {
@@ -61,7 +61,7 @@ header {
     background:
         radial-gradient(ellipse 80% 120% at 50% 0%, rgba(16, 16, 16, 0.95) 0%, var(--primary-bg) 80%),
         linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(20, 20, 20, 1) 100%);
-    padding: 2.5rem 0 3rem 0;
+    padding: 2rem 0 2.5rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -101,9 +101,9 @@ header .container {
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--text-primary);
     background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
     -webkit-background-clip: text;
@@ -117,21 +117,21 @@ header h1 {
 header h1::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 70px;
     height: 2px;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 100%);
-    margin: 1.5rem auto 0;
+    margin: 1rem auto 0;
     border-radius: 1px;
 }
 
 header p {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 3rem;
-    max-width: 700px;
+    margin-bottom: 1.5rem;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.7;
+    line-height: 1.6;
     font-weight: 300;
     letter-spacing: 0.01em;
 }
@@ -170,7 +170,7 @@ header .lang-buttons {
 
 /* Main Sections */
 section {
-    padding: 4rem 0;
+    padding: 3rem 0;
     position: relative;
 }
 
@@ -187,21 +187,21 @@ section::before {
 }
 
 section h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
     text-align: center;
     color: var(--text-primary);
     letter-spacing: -0.01em;
 }
 
 section p {
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
     text-align: center;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 /* Skills Section */
@@ -215,7 +215,7 @@ section p {
 .skill-item {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 20px;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -249,9 +249,9 @@ section p {
 }
 
 .skill-item h3 {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--accent-color);
     position: relative;
     z-index: 2;
@@ -265,11 +265,11 @@ section p {
 }
 
 .skill-item li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.6;
-    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding-left: 1.25rem;
     position: relative;
 }
 
@@ -286,26 +286,26 @@ section p {
 /* Contact Section */
 .contact-info {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .contact-item {
     display: inline-block;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 1.5rem 2rem;
+    padding: 1.25rem 1.75rem;
     border-radius: 15px;
-    margin: 1rem;
+    margin: 0.75rem;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
 }
 
 .contact-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--text-secondary);
     box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 0 16px rgba(255, 255, 255, 0.1);
+        0 6px 24px rgba(0, 0, 0, 0.3),
+        0 0 12px rgba(255, 255, 255, 0.1);
 }
 
 .contact-info strong {
@@ -318,7 +318,7 @@ section p {
 .contact-info a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s ease;
 }
@@ -332,8 +332,8 @@ section p {
 .funding-info {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 1.25rem;
+    margin-top: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -342,7 +342,7 @@ section p {
 .funding-item {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 1.5rem 2rem;
+    padding: 1.25rem 1.75rem;
     border-radius: 15px;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
@@ -408,9 +408,9 @@ section p {
 /* Footer */
 footer {
     background: var(--secondary-bg);
-    padding: 3rem 0;
+    padding: 2rem 0;
     text-align: center;
-    margin-top: 6rem;
+    margin-top: 4rem;
     border-top: 1px solid var(--border-color);
     position: relative;
 }
@@ -434,7 +434,7 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        padding-top: 60px;
+        padding-top: 50px;
     }
 
     .container {
@@ -453,7 +453,7 @@ footer p {
     }
 
     header {
-        padding: 4rem 0 5rem 0;
+        padding: 2.5rem 0 3rem 0;
     }
 
     header::after {
@@ -477,7 +477,7 @@ footer p {
     }
 
     section {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
 
     section h2 {
