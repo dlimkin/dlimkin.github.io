@@ -59,9 +59,9 @@ body {
 /* Header */
 header {
     background:
-        radial-gradient(ellipse 80% 120% at 50% 0%, rgba(16, 16, 16, 0.95) 0%, var(--primary-bg) 80%),
-        linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(20, 20, 20, 1) 100%);
-    padding: 2rem 0 2.5rem 0;
+        radial-gradient(ellipse 80% 120% at 50% 0%, rgba(30, 30, 30, 0.9) 0%, rgba(40, 40, 40, 0.9) 80%),
+        linear-gradient(135deg, rgba(50, 50, 50, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%);
+    padding: 1.5rem 0 2rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -76,23 +76,13 @@ header::before {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 30% 20%, rgba(150, 150, 150, 0.02) 0%, transparent 40%),
-        radial-gradient(circle at 70% 80%, rgba(200, 200, 200, 0.01) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.005) 0%, transparent 60%),
-        linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.01) 50%, transparent 55%);
+        radial-gradient(circle at 30% 20%, rgba(200, 200, 200, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(150, 150, 150, 0.02) 0%, transparent 50%);
     z-index: 0;
 }
 
 header::after {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
-    z-index: 2;
+    display: none; /* Remove decorative line */
 }
 
 header .container {
@@ -101,27 +91,16 @@ header .container {
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     color: var(--text-primary);
-    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     line-height: 1.1;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-}
-
-header h1::after {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 100%);
-    margin: 1rem auto 0;
-    border-radius: 1px;
 }
 
 header p {
