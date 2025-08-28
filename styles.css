@@ -401,6 +401,38 @@ section p {
     user-select: text;
 }
 
+/* QR Code Styles */
+.qr-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.qr-link:hover {
+    border-color: var(--text-secondary);
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.qr-code-thumb {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    filter: grayscale(0.5);
+    transition: filter 0.3s ease;
+}
+
+.qr-link:hover .qr-code-thumb {
+    filter: grayscale(0);
+}
+
 /* Footer */
 footer {
     background: var(--secondary-bg);
@@ -525,6 +557,17 @@ footer p {
         height: 32px;
         min-width: 32px;
         font-size: 0.9rem;
+    }
+
+    .qr-link {
+        width: 32px;
+        height: 32px;
+    }
+
+    .qr-code-thumb {
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
     }
 
     .skill-item li {

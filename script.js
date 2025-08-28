@@ -3,22 +3,22 @@ const fundingConfig = {
     btc: {
         name: 'BTC',
         address: 'bc1qsrl63vcuqnmp6drl3f6uhcvnky2t5vqlg2r2jq',
-        link: 'https://link.trustwallet.com/send?asset=c0&address=bc1qsrl63vcuqnmp6drl3f6uhcvnky2t5vqlg2r2jq'
+        link: 'https://link.trustwallet.com/send?asset=c0&address=bc1qsrl63vcuqnmp6drl3f6uhcvnky2t5vqlg2r2jq',
     },
     eth: {
         name: 'ETH (ERC-20)',
         address: '0xd1ce59aD3615cdbFCc8cc2C496E9CB0E10CD543B',
-        link:'https://link.trustwallet.com/send?asset=c60&address=0xd1ce59aD3615cdbFCc8cc2C496E9CB0E10CD543B'
+        link: 'https://link.trustwallet.com/send?asset=c60&address=0xd1ce59aD3615cdbFCc8cc2C496E9CB0E10CD543B',
     },
     trx: {
         name: 'TRON (TRC-20)',
         address: 'TZ84vr4XcuKcQZAsEJUdyvq5FT6LG66NjX',
-        link:'https://link.trustwallet.com/send?asset=c195&address=TZ84vr4XcuKcQZAsEJUdyvq5FT6LG66NjX',
+        link: 'https://link.trustwallet.com/send?asset=c195&address=TZ84vr4XcuKcQZAsEJUdyvq5FT6LG66NjX',
     },
     sol: {
         name: 'SOLANA',
         address: 'BE3hxHZfbk7qpgPtG7hARXJrGJjpwbd1eu9geYtUZNob',
-        link:'https://link.trustwallet.com/send?address=BE3hxHZfbk7qpgPtG7hARXJrGJjpwbd1eu9geYtUZNob&asset=c501'
+        link: 'https://link.trustwallet.com/send?address=BE3hxHZfbk7qpgPtG7hARXJrGJjpwbd1eu9geYtUZNob&asset=c501',
     }
 };
 
@@ -39,15 +39,20 @@ class FundingManager {
 
         let html = '';
 
-        Object.values(fundingConfig).forEach(crypto => {
+        Object.keys(fundingConfig).forEach(cryptoKey => {
+            const crypto = fundingConfig[cryptoKey];
             html += `
                 <div class="funding-item">
                     <strong>${crypto.name}</strong>
                     <div class="address-container">
+                     <a href="${crypto.link}" target="_blank" class="qr-link" title="Показать QR код">
+                            <img src="img/qr_${cryptoKey}_address.jpg" alt="QR код для ${crypto.name}" class="qr-code-thumb">
+                        </a>
                         <code class="address-text" data-address="${crypto.address}">${crypto.address}</code>
                         <button class="copy-btn" data-address="${crypto.address}" title="Копировать адрес">
-                            📋
+                            ⧉
                         </button>
+                       
                     </div>
                 </div>
             `;
