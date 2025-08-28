@@ -300,6 +300,83 @@ section p {
     text-decoration: none;
 }
 
+/* Funding Section */
+.funding-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.funding-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.funding-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--text-secondary);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        0 0 16px rgba(255, 255, 255, 0.05);
+}
+
+.funding-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.address-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.funding-item code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    word-break: break-all;
+    flex: 1;
+    border: 1px solid var(--border-color);
+}
+
+.funding-item a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-color);
+}
+
+.funding-item a:hover {
+    color: var(--accent-color);
+    border-color: var(--text-secondary);
+    transform: scale(1.1);
+}
+
 /* Footer */
 footer {
     background: var(--secondary-bg);
@@ -377,6 +454,31 @@ footer p {
         padding: 1rem 1.5rem;
     }
 
+    .funding-info {
+        padding: 0 1rem;
+    }
+
+    .funding-item {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .funding-item code {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .address-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .funding-item a {
+        width: 32px;
+        height: 32px;
+        align-self: center;
+    }
+
     .skill-item li {
         font-size: 0.9rem;
     }
@@ -415,6 +517,15 @@ footer p {
 
     .contact-item {
         padding: 0.75rem 1rem;
+    }
+
+    .funding-item {
+        padding: 1rem 1.25rem;
+    }
+
+    .funding-item code {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
     }
 }
 
