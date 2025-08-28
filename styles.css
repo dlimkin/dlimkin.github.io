@@ -29,6 +29,7 @@ body {
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
+    min-width: 480px;
 }
 
 body::before {
@@ -48,12 +49,14 @@ body::before {
 
 body {
     padding-top: 60px; /* Space for fixed header buttons */
+    min-width: 480px;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    min-width: 480px; /* Minimum viewport width */
 }
 
 /* Header */
@@ -553,23 +556,6 @@ footer p {
         width: calc(50% - 1rem);
     }
 
-    .funding-info {
-        padding: 0 1rem;
-    }
-
-    .funding-item {
-        padding: 1.25rem 1.5rem;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .funding-item code {
-        font-size: 0.75rem;
-        padding: 0.5rem 0.8rem;
-        word-break: break-word;
-    }
-
     .title-row {
         justify-content: space-between;
         gap: 0.75rem;
@@ -849,127 +835,15 @@ section {
     }
 }
 
-/* Ultra-mobile specific funding styles - QR left, copy right, name center separate row, address below */
-@media (max-width: 480px) {
+
+/* Medium tablets (480px+) funding adjustments */
+@media (min-width: 480px) {
     .funding-item {
-        padding: 1.5rem 1rem !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        position: relative !important;
-    }
-
-    /* Top row: QR left, Copy right */
-    .funding-item .qr-link {
-        position: absolute !important;
-        top: 1rem !important;
-        left: 1rem !important;
-        width: 70px !important;
-        height: 70px !important;
-        z-index: 10 !important;
-        border: 2px solid var(--border-color) !important;
-        border-radius: 12px !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .funding-item .qr-code-thumb {
-        width: 66px !important;
-        height: 66px !important;
-        border-radius: 8px !important;
-        filter: grayscale(0.2) !important;
-    }
-
-    .funding-item .qr-link:hover {
-        transform: scale(1.05) !important;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
-    }
-
-    /* Copy button positioned on the right */
-    .copy-btn {
-        position: absolute !important;
-        top: 1rem !important;
-        right: 1rem !important;
-        width: 50px !important;
-        height: 50px !important;
-        background: rgba(255, 255, 255, 0.1) !important;
-        border: 1px solid var(--border-color) !important;
-        border-radius: 12px !important;
-        z-index: 10 !important;
-    }
-
-    .copy-btn:hover {
-        background: rgba(255, 255, 255, 0.2) !important;
-        transform: scale(1.05) !important;
-    }
-
-    .funding-content {
-        width: 100% !important;
-        padding-left: 4rem !important; /* Space for QR */
-        padding-right: 4rem !important; /* Space for copy button */
-        margin-top: 4rem !important; /* Space for QR and copy row */
-    }
-
-    /* Name in separate centered row */
-    .title-row {
-        justify-content: center !important;
-        margin-bottom: 0.75rem !important;
-    }
-
-    .funding-item strong {
-        font-size: 1.1rem !important;
-        color: var(--accent-color) !important;
-        text-align: center !important;
-        display: block !important;
-        margin: 0 !important;
-    }
-
-    /* Address field below everything */
-    .funding-item code {
-        font-size: 0.75rem !important;
-        padding: 0.75rem 1rem !important;
-        word-break: break-all !important;
-        text-align: center !important;
-        background: rgba(0, 0, 0, 0.7) !important;
-        border: 1px solid var(--border-color) !important;
-        margin-top: 0.5rem !important;
-        width: 100% !important;
-        display: block !important;
-        clear: both !important;
-    }
-
-    /* Hide the copy button in title-row since we position it absolutely */
-    .title-row .copy-btn {
-        display: none !important;
-    }
-
-    /* Animations with proper timing */
-    .funding-item .qr-link {
-        animation: fadeInUp 0.6s ease-out 0.1s both !important;
-    }
-
-    .copy-btn {
-        animation: fadeInUp 0.6s ease-out 0.2s both !important;
-    }
-
-    .funding-item strong {
-        animation: fadeInUp 0.6s ease-out 0.3s both !important;
-    }
-
-    .funding-item code {
-        animation: fadeInUp 0.6s ease-out 0.4s both !important;
-    }
-}
-
-/* Small tablets (480px - 640px) funding adjustments - same layout structure */
-@media (max-width: 640px) and (min-width: 481px) {
-    .funding-item {
-        position: relative !important;
+        flex-direction: row !important; /* Keep horizontal layout */
+        gap: 1.25rem !important;
     }
 
     .funding-item .qr-link {
-        position: absolute !important;
-        top: 1rem !important;
-        left: 1rem !important;
         width: 80px !important;
         height: 80px !important;
         border: 2px solid var(--border-color) !important;
@@ -988,32 +862,21 @@ section {
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
     }
 
+    .funding-content {
+        flex: 1 !important;
+    }
+
     .copy-btn {
-        position: absolute !important;
-        top: 1rem !important;
-        right: 1rem !important;
-        width: 52px !important;
-        height: 52px !important;
+        width: 48px !important;
+        height: 48px !important;
         background: rgba(255, 255, 255, 0.1) !important;
         border: 1px solid var(--border-color) !important;
         border-radius: 12px !important;
     }
 
-    .funding-content {
-        padding-left: 4.5rem !important;
-        padding-right: 4.5rem !important;
-        margin-top: 4.5rem !important;
-    }
-
-    .title-row {
-        justify-content: center !important;
-    }
-
-    .funding-item strong {
-        text-align: center !important;
-    }
-
-    .title-row .copy-btn {
-        display: none !important;
+    .funding-item code {
+        font-size: 0.8rem !important;
+        padding: 0.75rem 1rem !important;
+        word-break: break-all !important;
     }
 }
