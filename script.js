@@ -43,16 +43,15 @@ class FundingManager {
             const crypto = fundingConfig[cryptoKey];
             html += `
                 <div class="funding-item">
-                    <strong>${crypto.name}</strong>
-                    <div class="address-container">
-                     <a href="${crypto.link}" target="_blank" class="qr-link" title="Показать QR код">
-                            <img src="img/qr_${cryptoKey}_address.jpg" alt="QR код для ${crypto.name}" class="qr-code-thumb">
-                        </a>
+                    <a href="${crypto.link}" target="_blank" class="qr-link" title="Показать QR код">
+                        <img src="img/qr_${cryptoKey}_address.jpg" alt="QR код для ${crypto.name}" class="qr-code-thumb">
+                    </a>
+                    <div class="funding-content">
+                        <strong>${crypto.name}</strong>
                         <code class="address-text" data-address="${crypto.address}">${crypto.address}</code>
                         <button class="copy-btn" data-address="${crypto.address}" title="Копировать адрес">
                             ⧉
                         </button>
-                       
                     </div>
                 </div>
             `;
