@@ -844,18 +844,12 @@ section {
     }
 
     .funding-item .qr-link {
-        width: 80px !important;
-        height: 80px !important;
         border: 2px solid var(--border-color) !important;
         border-radius: 12px !important;
         background: rgba(255, 255, 255, 0.95) !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     }
 
-    .funding-item .qr-code-thumb {
-        width: 76px !important;
-        height: 76px !important;
-    }
 
     .funding-item .qr-link:hover {
         transform: scale(1.05) !important;
